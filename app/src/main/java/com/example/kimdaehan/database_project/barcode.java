@@ -11,5 +11,7 @@ public class barcode extends AppCompatActivity {
         setContentView(R.layout.activity_hand_write);
     }
 
-    
+
+    //1111;
+
 }
