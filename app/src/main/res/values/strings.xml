@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">database_project</string>
+    <string name="갯수">갯수</string>
+    <string name="보관일자">보관일자</string>
+    <string name="보관위치">보관위치</string>
+    <string name="유통기한">유통기한</string>
+    <string name="상품명">상품명</string>
+    <string name="제조일자">제조일자</string>
+    <string name="구매일자">구매일자</string>
+    <string name="개봉일자">개봉일자</string>
+    <string name="입력방식1">바코드</string>
+    <string name="입력방식2">수기입력</string>
+    <string name="입력1">상품입력</string>
+    <string name="유통확인">유통기한 확인</string>
+</resources>
