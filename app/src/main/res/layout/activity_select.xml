@@ -12,20 +12,20 @@
         android:layout_width="wrap_content"
         android:layout_height="31dp"
         android:layout_marginBottom="31dp"
-        android:layout_marginEnd="167dp"
-        android:layout_marginLeft="165dp"
-        android:layout_marginRight="167dp"
-        android:layout_marginStart="165dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginLeft="67dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginStart="67dp"
         android:layout_marginTop="57dp"
         android:text="@string/입력1"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_barcode"
+        app:layout_constraintEnd_toStartOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/button_expire" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_hand"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="91dp"
@@ -35,13 +35,14 @@
         android:layout_marginStart="124dp"
         android:layout_marginTop="22dp"
         android:text="@string/입력방식2"
+        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintTop_toBottomOf="@+id/button_barcode" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/button_barcode"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="123dp"
@@ -50,8 +51,9 @@
         android:layout_marginStart="124dp"
         android:onClick="onClick"
         android:text="@string/입력방식1"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/button_hand"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -68,14 +70,14 @@
         android:onClick="onClick"
         android:text="@string/유통기한"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/button_expire"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread_inside" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/button_expire"
         android:layout_width="122dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="131dp"
@@ -88,5 +90,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="148dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="60dp"
+        android:onClick="onClick"
+        android:text="@string/저"
+        app:layout_constraintBottom_toTopOf="@+id/button_barcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/button_expire" />
 
 </android.support.constraint.ConstraintLayout>

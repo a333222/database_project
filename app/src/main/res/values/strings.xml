@@ -12,4 +12,6 @@
     <string name="입력방식2">수기입력</string>
     <string name="입력1">상품입력</string>
     <string name="유통확인">유통기한 확인</string>
+    <string name="저장">저장</string>
+    <string name="저">저장 상품 확인</string>
 </resources>

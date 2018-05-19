@@ -17,17 +17,21 @@ public class select extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId())
         {
-            case R.id.button4 :
+            case R.id.button_expire :
                 //Intent intent1 = new Intent(getApplicationContext(),MyTwo.class)
                 //startActivity(intent1);
                 break;
-            case R.id.button2 :
+            case R.id.button_barcode : //바코드
                 Intent intent2 = new Intent(getApplicationContext(),barcode.class);
                 startActivity(intent2);
                 break;
-            case R.id.button :
+            case R.id.button_hand : //수기입력
                 Intent intent3 = new Intent(getApplicationContext(),hand_write.class);
                 startActivity(intent3);
+                break;
+            case R.id.button : //확인
+                Intent intent4 = new Intent(getApplicationContext(),hand_write.class);
+                startActivity(intent4);
                 break;
         }
     }
