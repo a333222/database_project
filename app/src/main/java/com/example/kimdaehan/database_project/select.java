@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-
 public class select extends AppCompatActivity {
 
     @Override
@@ -22,7 +21,7 @@ public class select extends AppCompatActivity {
                 //startActivity(intent1);
                 break;
             case R.id.button_barcode : //바코드
-                Intent intent2 = new Intent(getApplicationContext(),barcode.class);
+                Intent intent2 = new Intent(getApplicationContext(), barcode.class);
                 startActivity(intent2);
                 break;
             case R.id.button_hand : //수기입력
@@ -30,7 +29,7 @@ public class select extends AppCompatActivity {
                 startActivity(intent3);
                 break;
             case R.id.button : //확인
-                Intent intent4 = new Intent(getApplicationContext(),hand_write.class);
+                Intent intent4 = new Intent(getApplicationContext(),check_item.class);
                 startActivity(intent4);
                 break;
         }

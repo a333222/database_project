@@ -19,6 +19,7 @@
         </activity>
         <activity android:name=".barcode" />
         <activity android:name=".hand_write" />
+        <activity android:name=".check_item" />
     </application>
 
 </manifest>

@@ -14,4 +14,11 @@
     <string name="유통확인">유통기한 확인</string>
     <string name="저장">저장</string>
     <string name="저">저장 상품 확인</string>
+    <string name="select1">상품명 :</string>
+    <string name="select2">제조일자 :</string>
+    <string name="select3">"구매일자 : "</string>
+    <string name="select4">개봉일자 :</string>
+    <string name="select5">보관위치 :</string>
+    <string name="select6">갯수 :</string>
+    <string name="상품조회">상품 조회</string>
 </resources>
