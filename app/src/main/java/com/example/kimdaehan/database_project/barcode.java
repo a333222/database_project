@@ -92,24 +92,8 @@ public class barcode extends AppCompatActivity {
             super.onActivityResult(requestCode, resultCode, data);
         }
     }
-/*
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
-        if(result != null) {
-            if(result.getContents() == null) {
-                Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
-            }
-        } else {
-        }
-    }
-*/
-
-    /** * 권한 요청에 대한 응답을 이곳에서 가져온다. * *
+    /*** 권한 요청에 대한 응답을 이곳에서 가져온다. * *
             *  @param requestCode 요청코드 *
             *  @param permissions 사용자가 요청한 권한들 *
             *  @param grantResults 권한에 대한 응답들(인덱스별로 매칭) */
