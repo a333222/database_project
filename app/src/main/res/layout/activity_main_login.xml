@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"> // 바꾸세요~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    tools:context=".LoginActivity"> // 바꾸세요~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
     <LinearLayout
@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/main_login"
             android:layout_width="match_parent"
             android:layout_height="225dp"
             android:orientation="vertical"
@@ -78,6 +79,7 @@
                 android:textColor="#ffffff"
                 android:background="@color/colorPrimary"
                 android:text="로그인"
+                android:id ="@+id/loginbutton"
                 android:layout_marginTop="10dp"
                 android:layout_gravity="center"/>
 
