@@ -1,3 +1,4 @@
+/*
 package com.example.kimdaehan.database_project;
 
 import android.animation.Animator;
@@ -37,6 +38,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 /**
  * A login screen that offers login via email/password.
  */
+/*
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
     /**
@@ -347,4 +349,4 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         }
     }
 }
-
+*/

@@ -28,9 +28,13 @@ public class select extends AppCompatActivity {
                 Intent intent3 = new Intent(getApplicationContext(),hand_write.class);
                 startActivity(intent3);
                 break;
-            case R.id.button : //확인
+            case R.id.button_check : //확인
                 Intent intent4 = new Intent(getApplicationContext(),check_item.class);
                 startActivity(intent4);
+                break;
+            case R.id.button_delete : //확인
+                Intent intent5 = new Intent(getApplicationContext(),delete_item_db.class);
+                startActivity(intent5);
                 break;
         }
     }

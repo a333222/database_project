@@ -81,13 +81,12 @@ public class DB_hand
         }
     }
 
-    /*
+
     public void deleteData(String aSql, ContactData aCData)
     {
-        String[] sqlData = {aCData.getPhoneNumber()};
-
+        String[] sqlData = {aCData.getName()};
         this.mDbController.execSQL(aSql, sqlData);
-    }*/
+    }
 
     public void selectAll(Cursor results, ArrayList<ContactData> aCDataList)
     {

@@ -21,4 +21,5 @@
     <string name="select5">보관위치 :</string>
     <string name="select6">갯수 :</string>
     <string name="상품조회">상품 조회</string>
+    <string name="상품삭제">상품 삭제</string>
 </resources>
