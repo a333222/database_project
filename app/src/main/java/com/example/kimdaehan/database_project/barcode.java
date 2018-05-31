@@ -87,6 +87,7 @@ public class barcode extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

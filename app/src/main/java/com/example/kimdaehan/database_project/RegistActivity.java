@@ -65,7 +65,7 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
             dbmgr.close();
         }
 
-        Intent intent =new Intent(this,MainActivity.class) ;
+        Intent intent =new Intent(this,LoginActivity.class) ;
 
 
         startActivity(intent) ;

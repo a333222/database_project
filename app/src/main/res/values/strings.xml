@@ -22,4 +22,9 @@
     <string name="select6">갯수 :</string>
     <string name="상품조회">상품 조회</string>
     <string name="상품삭제">상품 삭제</string>
+    <string name="로그인">로그인</string>
+    <string name="회원가입">회원가입</string>
+    <string name="아이디">아이디</string>
+    <string name="패스워드">패스워드</string>
+    <string name="Limitime">Limitime</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity"> // 바꾸세요~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    tools:context=".LoginActivity">
 
 
     <LinearLayout
@@ -30,9 +30,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Limitime"
+                android:text="@string/Limitime"
                 android:textColor="#ffffff"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -44,7 +44,7 @@
             <EditText
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:hint="아이디"
+                android:hint="@string/아이디"
                 android:layout_gravity="center"
                 android:padding="11dp"
                 android:textColor="#ffffff"
@@ -59,7 +59,7 @@
                 android:inputType="textPassword"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:hint="패스워드"
+                android:hint="@string/패스워드"
                 android:layout_gravity="center"
                 android:padding="11dp"
                 android:textColor="#ffffff"
@@ -72,25 +72,25 @@
                 />
 
             <Button
+                android:id="@+id/login_button"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="#ffffff"
-                android:background="@color/colorPrimary"
-                android:text="로그인"
-                android:id ="@+id/loginbutton"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="center"/>
+                android:background="@color/colorPrimary"
+                android:text="@string/로그인"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
-            <TextView
+            <Button
+                android:id="@+id/register_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:layout_marginTop="10dp"
-                android:text="회원가입"
-                android:id="@+id/registerbutton"
+                android:text="@string/회원가입"
                 />
 
         </LinearLayout>
