@@ -13,9 +13,9 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL("Create TABLE User (User_ID PRIMARY KEY, USER_Password) ;");
+       // db.execSQL("Create TABLE member (User_ID PRIMARY KEY, USER_Password) ;");
 
-        String sql  = "create table memebers (User_id PRIMARY KEY,password text,email text , name text,gender text);" ;
+        String sql  = "create table member (User_id PRIMARY KEY,password text,email text , name text,gender text);" ;
 
         db.execSQL(sql);
     }
@@ -28,7 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void insert(String create_at , String userId , String userPwd){
         SQLiteDatabase db = getWritableDatabase() ;
 
-        db.execSQL("insert into user values("+userId+","+userPwd+")");
+        db.execSQL("insert into member values("+userId+","+userPwd+")");
 
 
         db.close();

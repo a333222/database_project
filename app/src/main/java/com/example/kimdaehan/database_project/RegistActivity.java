@@ -52,11 +52,11 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
         try {
             SQLiteDatabase sqLiteDatabase = dbmgr.getWritableDatabase();
             StringBuffer sql = new StringBuffer( ) ;
-            sql.append("insert into customers Values(") ;
-            sql.append("'"+userId+"'");
-            sql.append("'"+userPwd+"'");
-            sql.append("'"+userEmail+"'");
-            sql.append("'"+userName+"'");
+            sql.append("insert into member Values(") ;
+            sql.append("'"+userId+"',");
+            sql.append("'"+userPwd+"',");
+            sql.append("'"+userEmail+"',");
+            sql.append("'"+userName+"',");
             sql.append("'"+memberGender+"'");
             sqLiteDatabase.execSQL(sql.toString());
         }catch (SQLException e){

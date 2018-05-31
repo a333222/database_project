@@ -21,7 +21,7 @@ public class DBManager extends SQLiteOpenHelper {
 
 
 
-        String sql  = "create table memebers (id text,password text,email text , name text,gender text);" ;
+        String sql  = "create table member (id text,password text,email text , name text,gender text);" ;
 
         db.execSQL(sql);
     }

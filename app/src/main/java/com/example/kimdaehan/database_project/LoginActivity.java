@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity implements View.OnClickListener {
 
-    private DBManager dbMgr ;
+    DBManager dbMgr ;
 
     protected void onCreate(Bundle savedInstanceState){
        super.onCreate(savedInstanceState);
@@ -45,7 +45,12 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             finish();
         }else if(view.getId() == R.id.login_button){
             //로그인 버튼을 누른 경우 로그인 시도
-            Toast.makeText(LoginActivity.this, "권한요청을 거부했습니다.", Toast.LENGTH_SHORT).show();
+
+          //  SQLiteDatabase sqLiteDatabase = dbMgr.getWritableDatabase();
+            //StringBuffer sql = new StringBuffer( ) ;
+            //sql.append("create table memebers (User_id PRIMARY KEY,password text,email text , name text,gender text);") ;
+           // sqLiteDatabase.execSQL(sql.toString());
+           // Toast.makeText(LoginActivity.this, "권한요청을 거부했습니다.", Toast.LENGTH_SHORT).show();
             //아이디 가져오기
 
             EditText edId = (EditText)findViewById(R.id.idText) ;
@@ -60,17 +65,15 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
             try {
                 dbMgr = new DBManager(this);
-
                 SQLiteDatabase db =  dbMgr.getReadableDatabase();
-
-
                 Cursor cursor = db.rawQuery("select id,password from member where id="+userId,null) ;
+
                 while (cursor.moveToNext()) {
                     String memberId = cursor.getString(0);
-                    String memberUser = cursor.getString(1);
+                    String memberPwdr = cursor.getString(1);
 
 
-                    if (edPwd.equals(memberUser) && edId.equals(memberId)) {
+                    if (userPwd.equals(memberPwdr) && userId.equals(memberId)) {
                         Intent intent = new Intent(this, select.class);
                         startActivity(intent);
                         finish();
