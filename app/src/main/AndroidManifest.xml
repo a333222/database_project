@@ -22,6 +22,7 @@
         <activity android:name=".check_item" />
         <activity android:name=".RegistActivity" />
         <activity android:name=".delete_item_db" />
+        <activity android:name=".LoginActivity"/>
     </application>
 
 </manifest>

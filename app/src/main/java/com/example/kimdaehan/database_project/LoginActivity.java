@@ -63,7 +63,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
             SQLiteDatabase db =  dbMgr.getReadableDatabase();
 
 
-            Cursor cursor = db.rawQuery("select id,password from member",null) ;
+            Cursor cursor = db.rawQuery("select id,password from member where id="+userId,null) ;
             while (cursor.moveToNext()) {
                 String memberId = cursor.getString(0);
                 String memberUser = cursor.getString(1);
