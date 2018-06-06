@@ -28,4 +28,6 @@
     <string name="패스워드">패스워드</string>
     <string name="Limitime">Limitime</string>
     <string name="상품별특징">상품별 특징</string>
+    <string name="상할">상할때 특징</string>
+    <string name="주의사항">주의사항</string>
 </resources>

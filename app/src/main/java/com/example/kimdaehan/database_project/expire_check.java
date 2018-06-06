@@ -13,7 +13,7 @@ public class expire_check extends AppCompatActivity
     SQLiteDatabase database;
     DB_hand dbMgr;
     private ListView mListViewLayout			= null;
-    private ListArrayAdapter mListArrayAdapter	= null;
+    private ListArrayAdapter2 mListArrayAdapter	= null;
     //주석
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,10 +22,10 @@ public class expire_check extends AppCompatActivity
         dbMgr = new DB_hand(this);
         setContentView(R.layout.item_select);
 
-        ArrayList<ContactData> cDataList = new ArrayList<ContactData>();
+        ArrayList<ContactData2> cDataList = new ArrayList<ContactData2>();
         getContactDBData(cDataList);
 
-        mListArrayAdapter = new ListArrayAdapter(this,
+        mListArrayAdapter = new ListArrayAdapter2(this,
                 R.id.list_item,
                 cDataList);
         mListViewLayout = (ListView)
@@ -33,11 +33,21 @@ public class expire_check extends AppCompatActivity
         mListViewLayout.setAdapter(mListArrayAdapter);
     }
 
-    private void getContactDBData(ArrayList<ContactData> aCDataList)
+    private void getContactDBData(ArrayList<ContactData2> aCDataList)
     {
         database = dbMgr.dbOpen();
-        Cursor results = database.rawQuery("SELECT * FROM db_table_test  ORDER BY reg_id DESC", null);
-        dbMgr.selectAll(results, aCDataList);
+        dbMgr.insert(database,"소고기","","");
+        dbMgr.insert(database,"돼지고지","","");
+        dbMgr.insert(database,"양파","","");
+        dbMgr.insert(database,"파","","");
+        dbMgr.insert(database,"마늘","","");
+        dbMgr.insert(database,"당근","","");
+        dbMgr.insert(database,"우유","","");
+        dbMgr.insert(database,"회","","");
+        dbMgr.insert(database,"오이","","");
+        dbMgr.insert(database,"바나나","","");
+        Cursor results = database.rawQuery("SELECT * FROM expire_db", null);
+        dbMgr.select(results, aCDataList);
         dbMgr.dbClose(database);
     }
 }

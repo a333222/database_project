@@ -42,13 +42,9 @@ public class DB_hand
                     "name text)" ;
 
             aDb.execSQL("CREATE TABLE expire_db " +
-                    "(reg_id INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                    "name TEXT, " +
-                    "make TEXT, " +
-                    "buy TEXT , " +
-                    "open TEXT, " +
-                    "store TEXT, " +
-                    "num TEXT)");
+                    "(name TEXT, " +
+                    "fff TEXT, " +
+                    "care TEXT)");
 
            // String sql2 = "insert into member values (aa,aa,aa,aa)" ;
 
@@ -119,6 +115,25 @@ public class DB_hand
         }
     }
 
+    public void insert(SQLiteDatabase db, String name,String fff,String care)
+    {
+        db.beginTransaction();
+        try
+        {
+            String sql = "INSERT INTO expire_db"
+                    + " VALUES('" + name + "', '" + fff + "', '" + care + "');";
+            db.execSQL(sql);
+            db.setTransactionSuccessful();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+        finally
+        {
+            db.endTransaction();
+        }
+    }
 
     public void deleteData(String aSql, ContactData aCData)
     {
@@ -126,6 +141,22 @@ public class DB_hand
         this.mDbController.execSQL(aSql, sqlData);
     }
 
+    public void select(Cursor results, ArrayList<ContactData2> aCDataList)
+    {
+        //Cursor results = db.rawQuery(aSql, null);
+        results.moveToFirst();
+
+        while(!results.isAfterLast())
+        {
+            ContactData2 cData = new ContactData2(
+                    results.getString(0),
+                    results.getString(1),
+                    results.getString(2));
+            aCDataList.add(cData);
+            results.moveToNext();
+        }
+        results.close();
+    }
 
     public void selectAll(Cursor results, ArrayList<ContactData> aCDataList)
     {
