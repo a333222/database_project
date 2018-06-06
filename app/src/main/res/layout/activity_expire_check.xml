@@ -13,11 +13,6 @@
         android:textSize="36dp"
         android:textStyle="bold"></TextView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FF0000"/>
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"

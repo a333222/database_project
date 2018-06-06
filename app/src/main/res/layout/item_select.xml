@@ -8,21 +8,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+
         android:gravity="center"
         android:text="@string/상품조회"
         android:textSize="36dp"
         android:textStyle="bold"></TextView>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FF0000"/>
-
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:divider="#FF0000"
-        android:dividerHeight="1dp">
+        android:divider="#002aff"
+        android:dividerHeight="1dp"
+        android:layout_margin="15dp"
+        >
     </ListView>
 </LinearLayout>

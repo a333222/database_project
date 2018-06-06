@@ -7,17 +7,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="상품 삭제"
         android:textSize="36dp"
-        android:textStyle="bold"
-        android:text="상품 삭제">
-    </TextView>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="#FF0000"/>
+        android:textStyle="bold"></TextView>
 
     <ListView
         android:id="@+id/listView"
