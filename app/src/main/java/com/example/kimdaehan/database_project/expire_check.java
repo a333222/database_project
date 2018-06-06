@@ -14,7 +14,7 @@ public class expire_check extends AppCompatActivity
     DB_hand dbMgr;
     private ListView mListViewLayout			= null;
     private ListArrayAdapter mListArrayAdapter	= null;
-
+    //주석
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
