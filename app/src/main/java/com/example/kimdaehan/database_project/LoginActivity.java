@@ -89,9 +89,9 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                         startActivity(intent);
                         finish();
                     } else {
-                        TextView defalutTextView = new TextView(this);
-                        defalutTextView.append("아이디 & 비밀번호가 맞지 않습니다.");
-                        layout.addView(defalutTextView);
+                        Intent intent = new Intent(this,LoginActivity.class) ;
+                        startActivity(intent);
+                        finish();
                     }
                 }
 
@@ -102,7 +102,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 errorTextView.append("db 접속 장애");
                 layout.addView(errorTextView);
             }
-            finish();
+            //finish();
         }
 
     }
