@@ -28,8 +28,7 @@ public class DB_hand
         public void onCreate(SQLiteDatabase aDb)
         {
             aDb.execSQL("CREATE TABLE db_table_test " +
-                    "(reg_id INTEGER PRIMARY KEY AUTOINCREMENT, "+
-                    "name TEXT, " +
+                    "(name TEXT, " +
                     "make TEXT, " +
                     "buy TEXT , " +
                     "open TEXT, " +
@@ -101,7 +100,7 @@ public class DB_hand
         try
         {
             String sql = "INSERT INTO " + DB_NAME
-                    + " VALUES( '"+ (n++) + "','" + name + "', '" + made + "', '" + buy + "', '" + open + "', '" + store +"', '" + num + "');";
+                    + " VALUES( '" + name + "', '" + made + "', '" + buy + "', '" + open + "', '" + store +"', '" + num + "');";
             db.execSQL(sql);
             db.setTransactionSuccessful();
         }

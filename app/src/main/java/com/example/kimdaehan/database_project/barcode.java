@@ -20,6 +20,8 @@ public class barcode extends AppCompatActivity {
     DB_hand dbMgr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbMgr = new DB_hand(this);
+
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
         integrator.setPrompt("Scan a barcode");
