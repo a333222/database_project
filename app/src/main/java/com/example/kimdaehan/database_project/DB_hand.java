@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -34,6 +35,15 @@ public class DB_hand
                     "open TEXT, " +
                     "store TEXT, " +
                     "num TEXT)");
+            String sql  = "create table member"+
+                    "(id text,"+
+                    "password text,"+
+                    "email text ,"+
+                    "name text)" ;
+           // String sql2 = "insert into member values (aa,aa,aa,aa)" ;
+
+            aDb.execSQL(sql);
+           // aDb.execSQL(sql2);
         }
 
         @Override
@@ -60,6 +70,24 @@ public class DB_hand
     }
 
 
+    public void register(SQLiteDatabase db,String id,String password,String email, String name){
+        db.beginTransaction();
+        try{
+            String sql ="Insert into member values('"+id+"','"+password+"','"+email+"','"+name+"')";
+            Log.d("ok",sql) ;
+
+            db.execSQL(sql);
+            Log.d("ok","complete insert?") ;
+
+            db.setTransactionSuccessful();
+            Log.d("ok","complete insert?") ;
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            db.endTransaction();
+        }
+    }
 
     public void insertName(SQLiteDatabase db, String name,String made,String buy,String open,String store,String num)
     {
@@ -87,6 +115,7 @@ public class DB_hand
         String[] sqlData = {aCData.getName()};
         this.mDbController.execSQL(aSql, sqlData);
     }
+
 
     public void selectAll(Cursor results, ArrayList<ContactData> aCDataList)
     {

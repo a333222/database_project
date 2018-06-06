@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 
 public class LoginActivity extends Activity implements View.OnClickListener {
 
-    DBManager dbMgr ;
+    DB_hand dbMgr ;
 
     protected void onCreate(Bundle savedInstanceState){
        super.onCreate(savedInstanceState);
@@ -55,25 +56,35 @@ public class LoginActivity extends Activity implements View.OnClickListener {
 
             EditText edId = (EditText)findViewById(R.id.idText) ;
             String userId= edId.getText().toString() ;
-
+            Log.d("dddd",userId);
 
 
             //비밀번호 가져오기
 
             EditText edPwd = (EditText)findViewById(R.id.passwordText) ;
             String userPwd = edPwd.getText().toString() ;
+            Log.d("ddddd",userPwd) ;
 
             try {
-                dbMgr = new DBManager(this);
-                SQLiteDatabase db =  dbMgr.getReadableDatabase();
-                Cursor cursor = db.rawQuery("select id,password from member where id="+userId,null) ;
+                dbMgr = new DB_hand(this);
+                SQLiteDatabase db =dbMgr.dbOpen() ;
+                Log.d("dddd","dbOPen ok  ") ;
 
+                Cursor cursor = db.rawQuery("select id,password from member where id="+userId+";",null) ;
+                Log.d("dddd","cursor ok ") ;
                 while (cursor.moveToNext()) {
                     String memberId = cursor.getString(0);
-                    String memberPwdr = cursor.getString(1);
+                    Log.d("dddd",cursor.getString(0)) ;
+                    Log.d("dddd",memberId) ;
 
 
-                    if (userPwd.equals(memberPwdr) && userId.equals(memberId)) {
+
+                    String memberPwd = cursor.getString(1);
+                    Log.d("dddd",memberPwd) ;
+
+
+
+                    if (userPwd.equals(memberPwd) && userId.equals(memberId)) {
                         Intent intent = new Intent(this, select.class);
                         startActivity(intent);
                         finish();
@@ -85,7 +96,7 @@ public class LoginActivity extends Activity implements View.OnClickListener {
                 }
 
                 cursor.close();
-                dbMgr.close();
+                db.close();
             }catch(SQLException e){
                 TextView errorTextView = new TextView(this) ;
                 errorTextView.append("db 접속 장애");

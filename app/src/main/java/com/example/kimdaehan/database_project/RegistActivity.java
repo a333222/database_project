@@ -5,6 +5,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +13,7 @@ import android.widget.RadioGroup;
 
 public class RegistActivity extends AppCompatActivity implements View.OnClickListener {
 
-    DBManager dbmgr ;
+    DB_hand dbmgr ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,34 +42,22 @@ public class RegistActivity extends AppCompatActivity implements View.OnClickLis
         String userName = memberName.getText().toString() ;
 
 
-        RadioGroup radioGroupGender = (RadioGroup)findViewById(R.id.genderGroup) ;
-        String memberGender ="여자" ;
-        if(radioGroupGender.getCheckedRadioButtonId() ==R.id.genderMan){
-            memberGender ="남자" ;
-        }
 
-        dbmgr = new DBManager(this) ;
+
+        dbmgr = new DB_hand(this) ;
         // (id text,password text,email text , name text,gender text)
-        try {
-            SQLiteDatabase sqLiteDatabase = dbmgr.getWritableDatabase();
-            StringBuffer sql = new StringBuffer( ) ;
-            sql.append("insert into member Values(") ;
-            sql.append("'"+userId+"',");
-            sql.append("'"+userPwd+"',");
-            sql.append("'"+userEmail+"',");
-            sql.append("'"+userName+"',");
-            sql.append("'"+memberGender+"'");
-            sqLiteDatabase.execSQL(sql.toString());
-        }catch (SQLException e){
 
-        }finally {
-            dbmgr.close();
-        }
+        Log.d("dd",userName) ;
+        Log.d("dd",userPwd) ;
+        dbmgr.register(dbmgr.dbOpen(),userId,userPwd,userEmail,userName);
+
+        dbmgr.dbClose(dbmgr.dbOpen());
 
         Intent intent =new Intent(this,LoginActivity.class) ;
 
 
         startActivity(intent) ;
+
 
         finish();
 
