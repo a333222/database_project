@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
@@ -15,7 +16,8 @@ import com.google.zxing.integration.android.IntentIntegrator;
 import com.google.zxing.integration.android.IntentResult;
 
 public class barcode extends AppCompatActivity {
-
+    SQLiteDatabase database;
+    DB_hand dbMgr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         IntentIntegrator integrator = new IntentIntegrator(this);
@@ -87,7 +89,17 @@ public class barcode extends AppCompatActivity {
                 Toast.makeText(this, "Cancelled", Toast.LENGTH_LONG).show();
             } else {
                 Toast.makeText(this, "Scanned: " + result.getContents(), Toast.LENGTH_LONG).show();
+                String Values[] = result.getContents().split(",");
+                String name		= Values[0];
+                String make		= Values[1];
+                String buy		= null;
+                String open		= null;
+                String store	= null;
+                String num		= null;
 
+                database = dbMgr.dbOpen();
+                dbMgr.insertName(database, name, make, buy, open, store, num);
+                dbMgr.dbClose(database);
             }
         } else {
             super.onActivityResult(requestCode, resultCode, data);

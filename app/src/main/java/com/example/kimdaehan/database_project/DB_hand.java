@@ -40,6 +40,16 @@ public class DB_hand
                     "password text,"+
                     "email text ,"+
                     "name text)" ;
+
+            aDb.execSQL("CREATE TABLE expire_db " +
+                    "(reg_id INTEGER PRIMARY KEY AUTOINCREMENT, "+
+                    "name TEXT, " +
+                    "make TEXT, " +
+                    "buy TEXT , " +
+                    "open TEXT, " +
+                    "store TEXT, " +
+                    "num TEXT)");
+
            // String sql2 = "insert into member values (aa,aa,aa,aa)" ;
 
             aDb.execSQL(sql);

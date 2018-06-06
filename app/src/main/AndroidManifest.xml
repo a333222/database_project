@@ -22,7 +22,8 @@
         <activity android:name=".check_item" />
         <activity android:name=".RegistActivity" />
         <activity android:name=".delete_item_db" />
-        <activity android:name=".select"/>
+        <activity android:name=".select" />
+        <activity android:name=".expire_check"></activity>
     </application>
 
 </manifest>

@@ -17,8 +17,8 @@ public class select extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.button_expire :
-                //Intent intent1 = new Intent(getApplicationContext(),MyTwo.class)
-                //startActivity(intent1);
+                Intent intent1 = new Intent(getApplicationContext(),expire_check.class);
+                startActivity(intent1);
                 break;
             case R.id.button_barcode : //바코드
                 Intent intent2 = new Intent(getApplicationContext(), barcode.class);
